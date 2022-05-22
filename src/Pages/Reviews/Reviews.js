@@ -1,17 +1,10 @@
 import React, { useEffect, useState } from "react";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
 import "./Reviews.css";
-
-// import required modules
-import SwiperCore, { Autoplay, Pagination } from "swiper";
 import Review from "../Review/Review";
 import { Toast } from "bootstrap";
 import { Card, Row, Spinner } from "react-bootstrap";
 
 const Reviews =()=> {
-    SwiperCore.use([Pagination, Autoplay]);
     const [loading, setLoading] = useState(true);
     const [reviews, setReviews]=useState();
     useEffect(() => {

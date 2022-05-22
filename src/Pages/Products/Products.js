@@ -5,14 +5,12 @@ import Product from '../Product/Product';
 
 const Products = () => {
     const [products, setProducts] = useState([]);
-    const [loading, setLoading]= useState(true);
     const count = products.length;
     useEffect(() => {
         fetch("http://localhost:5000/products")
             .then(res => res.json())
             .then(data => {
               setProducts(data);
-              setLoading(false);
             })
             .catch((error) => Toast.error(error.message));
     }, [])
